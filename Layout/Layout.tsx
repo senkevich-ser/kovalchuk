@@ -4,10 +4,14 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import { FunctionComponent } from "react";
 import cn from "classnames";
+import { Montserrat } from '@next/font/google';
+
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 export function Layout({ children }: LayoutProps): JSX.Element {
   return (
-    <div className={styles.layout}>
+    <div className={cn(styles.layout,montserrat.className)}>
       <Header />
       {children}
       <Footer />
