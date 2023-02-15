@@ -1,5 +1,16 @@
 
-.layout{
-    margin:0;
+.nav{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
 }
 
+.button{
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid white;
+}
+
+.buttonActive{
+    background-color: #9ac0f7;
+}

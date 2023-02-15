@@ -1,11 +1,14 @@
 .h1{
     font-size: 24px;
+    color:aquamarine;
 }
 
 .h2{
     font-size: 20px;
+    color: blueviolet;
 }
 
 .h3{
     font-size: 16px;
+    color: brown;
 }
