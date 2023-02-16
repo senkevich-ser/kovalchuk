@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Contacts({ contacts }: userItem[]) {
+export default function Contacts({ contacts }:any) {
   return (
     <>
       <Head>

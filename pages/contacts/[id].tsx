@@ -21,7 +21,7 @@ export async function getServerSideProps(context:any) {
 }
 
 
-export default function Contact(data) {
+export default function Contact(data:any) {
 
 const{name,username,email,address}=data.userItem;
 const {street,suite,city,zipcode}=address;
@@ -31,6 +31,7 @@ const {street,suite,city,zipcode}=address;
       <div className={styles.main}>
         <Tag tag="h1">{name}</Tag>
         <Tag tag="h2">{username}</Tag>
+        <strong><Tag tag="h2">Residential address</Tag></strong>
         <Tag tag="h3">{email}</Tag>
         <Paragraph size="m">
           {`Street: ${street}, Suite: ${suite}, City: ${city}, Zipcode: ${zipcode}`}

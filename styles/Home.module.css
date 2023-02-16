@@ -8,17 +8,38 @@
 }
 
 .p{
-  max-width: 400px;
   min-width: 300px;
+  max-width: 400px;
 }
 
 .ul{
+  padding: 25px;
   list-style-type:decimal;
-  margin: 0;
-  padding: 0;
 }
 
 .link{
   text-decoration: none;
+  font-weight: 600;
 }
+
+.post{
+  display: grid;
+  grid-template-areas:
+  "user" "title"
+  "body" "body";
+  grid-template-columns: auto 1fr;
+}
+
+.user{
+  grid-area: user;
+}
+
+.title{
+  grid-area: title;
+}
+
+.body{
+  grid-area: body;
+}
+
 
