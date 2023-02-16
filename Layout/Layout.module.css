@@ -6,3 +6,9 @@
     min-height: 100vh;
 }
 
+
+@media (max-width:500px) {
+    .layout{
+        padding: 0 10px;
+    } 
+}

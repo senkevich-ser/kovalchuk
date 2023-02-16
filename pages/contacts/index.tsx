@@ -1,20 +1,26 @@
 import styles from "@/styles/Home.module.css";
-import { useEffect, useState } from "react";
 import { Layout } from "@/Layout/Layout";
+import { userItem } from "@/interfaces/users";
+import Link from "next/link";
 import Head from "next/head";
 
-export default function Contacts() {
-  const [contacts, setContacts] = useState(null);
+export async function getStaticProps() {
+  const respone = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await respone.json();
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
-  useEffect(() => {
-    async function fetchData() {
-      const respone = await fetch("https://jsonplaceholder.typicode.com/users");
-      const data = await respone.json();
-      setContacts(data);
-    }
-    fetchData();
-  }, [contacts]);
+  return {
+    props: {
+      contacts: data,
+    },
+  };
+}
 
+export default function Contacts({ contacts }: userItem[]) {
   return (
     <>
       <Head>
@@ -29,9 +35,13 @@ export default function Contacts() {
             incididunt est id minim. Aliquip est nulla voluptate enim aliquip
             pariatur et in Lorem ad. Excepteur nostrud pariatur sint officia.
           </p>
-          <ul>
+          <ul className={styles.ul}>
             {contacts &&
-              contacts.map((con:object) => <li key={con.id}><strong>{con.name}</strong>({con.email})</li>)}
+              contacts.map((con: userItem) => (
+                <li key={con.id}>
+                  <Link className={styles.link} href={`/contacts/${con.id}`}>{con.name}</Link>({con.email})
+                </li>
+              ))}
           </ul>
         </div>
       </Layout>

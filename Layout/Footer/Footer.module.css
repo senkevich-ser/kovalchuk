@@ -2,14 +2,40 @@
 .footer{
     display:grid;
     grid-template-columns: 1fr auto auto;
-    gap:40px;
+    gap:10px 40px;
 
     padding: 25px;
     background-color: #1677ff;
+    color:white;
 
     font-weight: 500;
     font-size: 16px;
-    line-height: 22px;
+    line-height: 24px;
     
 }
 
+.footer a:hover{
+    color:#dbe5f1;  
+}
+
+.a{
+    color:white;
+    text-decoration: none; 
+}
+
+@media (max-width:1140px) {
+    .footer{
+        grid-template-columns: auto auto auto; 
+    }
+     
+}
+
+@media (max-width:750px) {
+    .footer{
+        grid-template-columns: 1fr; 
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+     
+}
